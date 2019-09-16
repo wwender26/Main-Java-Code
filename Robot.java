@@ -166,13 +166,13 @@ public class Robot extends TimedRobot {
     NetworkTableEntry ta = table.getEntry("ta");
     NetworkTableEntry tv = table.getEntry("tv");
 
-    double x = tx.getDouble(0.0);
-    double y = ty.getDouble(0.0);
+    double coordinateX = tx.getDouble(0.0);
+    double coordinateY = ty.getDouble(0.0);
     double a = ta.getDouble(0.0);
     double v = tv.getDouble(0.0);
 
-    double ratioX = (x-6)/27;
-    double ratioY = y/40.5;
+    double ratioX = (coordinateX-6)/27;
+    double ratioY = coordinateY/40.5;
     double ratioA = .8*(1-(a/20));//changed
 
     double min = .34;
@@ -191,8 +191,8 @@ public class Robot extends TimedRobot {
     double correctionX = (Math.signum(ratioX) == 1) ? Math.sin(1.2*ratioX + .2): Math.sin(1.2*ratioX - .2);
 
 
-    SmartDashboard.putNumber("LimelightX", x);
-    SmartDashboard.putNumber("LimelightY", y);
+    SmartDashboard.putNumber("LimelightX", coordinateX);
+    SmartDashboard.putNumber("LimelightY", coordinateY);
     SmartDashboard.putNumber("LimelightA", a);
     SmartDashboard.putNumber("correctionX", correctionX);  
     SmartDashboard.putNumber("ratioX",ratioX);
