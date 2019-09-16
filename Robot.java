@@ -216,14 +216,8 @@ public class Robot extends TimedRobot {
       autoPilotStep = 1;}
     else{doAutoPilotNow=false;}
 
-    switch(autoPilotStep) {
-      case 1:/*
-      if (b) {tempRatioX = ratioX+(x/27);b=false;} //tempRatioX should change the 0
-      //Change the 0 it must adjust to
-      driveTrain.tankDrive(tempRatioX,tempRatioX);
-      if (true) {autoPilotStep = 2;};
-    }
-      case 2:{*/
+    if (autoPilotStep == 1) {
+  
       if(v==1){driveTrain.tankDrive((sineLeft/*(ratioX*.5)+ratioA*.8*/)+.1,((sineRight*10/13/*(-(ratioX*.5))*12/13+ratioA*.8*/))+.1);}//.4
       if (a > 15){autoPilotStep = 0;doAutoPilotNow = false;b=true;}
     }
